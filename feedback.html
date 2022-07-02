@@ -5,16 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Awaiting Feedback</title>
+    <style>
+        .button{
+            padding: 8px;
+            outline: none;
+            cursor: pointer;
+            border: 1px solid #434749;
+            border-radius: 5px;
+            background-color: #27292b;
+            font-size: 10px;
+            color: white;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+            margin-bottom: 5px;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+        
+        .button:hover {
+            background-color: rgba(23, 23, 23, 0.75);
+        }
+        .right {float: right;}
+            </style>
 </head>
 
 <body>
-    <button onclick="location.href='index.html'">In Progress</button>
+
+    <div>
+        <button class="button" onclick="location.href='index.html'">In Progress</button>
+        <input class="button right" type="button" value="Evaluation"
+            onclick="window.open('https://airtable.com/shrFWueHO2FtBoFgG')" />
+        <input class="button right" type="button" value="Add Task"
+            onclick="window.open('https://airtable.com/shr5Hz2XCLKc9hxOM')" />
+        <input class="button right" type="button" value="Add Project"
+            onclick="window.open('https://airtable.com/shrjHDVsNZaye2sjj')" />
+
+    </div>
+
     <iframe class="airtable-embed" src="https://airtable.com/embed/shr4QmXZCINdAHqxo?backgroundColor=gray"
         frameborder="0" onmousewheel="" width="100%" height="1000"
         style="background: transparent; border: 1px solid #ccc;"></iframe>
 
-        
+
 </body>
 
 
