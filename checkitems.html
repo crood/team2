@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Item Checker</title>
+</head>
+<body>
+    <h1>Duplicate Item Checker</h1>
+    <textarea id="inputList" placeholder="Paste your list here..." rows="10" cols="50"></textarea>
+    <button onclick="checkDuplicates()">Check Duplicates</button>
+    <div id="result"></div>
+
+    <script>
+        function checkDuplicates() {
+            const inputList = document.getElementById('inputList').value.trim().split('\n');
+            const itemCounts = {};
+
+            inputList.forEach(item => {
+                const trimmedItem = item.trim();
+                if (trimmedItem !== '') {
+                    itemCounts[trimmedItem] = (itemCounts[trimmedItem] || 0) + 1;
+                }
+            });
+
+            const duplicates = Object.entries(itemCounts).filter(([item, count]) => count > 1);
+
+            if (duplicates.length === 0) {
+                document.getElementById('result').innerHTML = 'No duplicates found.';
+            } else {
+                let resultHTML = '<h2>Duplicates:</h2><ul>';
+                duplicates.forEach(([item, count]) => {
+                    resultHTML += `<li>${item} (Count: ${count})</li>`;
+                });
+                resultHTML += '</ul>';
+                document.getElementById('result').innerHTML = resultHTML;
+            }
+        }
+    </script>
+</body>
+</html>
